@@ -15,7 +15,7 @@ You need to be running Windows as the script relies on **WindowsInstaller.Instal
 ### Usage
 ```powershell
 > .\Remote-InstallMSIPackage.ps1 -ComputerName <Hostname> -Path <Path to *.msi>
-Connection established to <Hostname used by 'mkowalsky'.
+Connection established to <Hostname> used by 'mkowalsky'.
 
 Product Name : 7-Zip 19.00
 Version      : 19.00.00.0
