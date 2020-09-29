@@ -109,7 +109,7 @@ Process {
         Invoke-Command -OutVariable NewProductData -Session $Session -ArgumentList $MsiData -ScriptBlock { Get-CimInstance -ClassName win32_product -filter ("name = '" + $args.ProductName + "'") | Select-Object Name, Version, InstallDate } | Out-Null
         If ($NewProductData.Name) {
             Write-Host "Installed successfully."
-            Invoke-Command -Session $Session -ArgumentList $MsiData -ScriptBlock { Remove-Item ("C:\" + $MsiData.FileName) } | Out-Null
+            Invoke-Command -Session $Session -ArgumentList $MsiData -ScriptBlock { Remove-Item ("C:\" + $args.FileName) } | Out-Null
         } Else {
             Write-Host "Installation failed."
         }
